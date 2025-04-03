@@ -1,0 +1,19 @@
+{% extends "base.html" %}
+
+{% block content %}
+    <h1>All Tweets</h1>
+    <a href="{% url 'tweet_create' %}">Create Tweet</a>
+    <ul>
+        {% for tweet in tweet %}
+            <li>
+                <strong>{{ tweet.user.username }}</strong>: {{ tweet.text }}
+                {% if tweet.photo %}
+                    <br><img src="{{ tweet.photo.url }}" alt="Tweet Image" width="200">
+                {% endif %}
+                <br>
+                <a href="{% url 'tweet_edit' tweet.id %}">Edit</a> |
+                <a href="{% url 'tweet_delete' tweet.id %}">Delete</a>
+            </li>
+        {% endfor %}
+    </ul>
+{% endblock %}

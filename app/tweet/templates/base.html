@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Twitter Clone</title>
+</head>
+<body>
+    <nav>
+        <a href="{% url 'tweet_list' %}">Home</a> |
+        <a href="{% url 'tweet_create' %}">New Tweet</a>
+    </nav>
+    <hr>
+    {% block content %}{% endblock %}
+</body>
+</html>
